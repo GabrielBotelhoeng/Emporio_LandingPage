@@ -24,15 +24,15 @@ Referência: mercearia de interior, rótulo de cachaça artesanal, armazém anti
 
 ## FOTOS — ação necessária
 
-A página tem slots para fotos reais. Enquanto os arquivos não existirem, cada slot mostra uma ilustração SVG estilo xilogravura (fallback automático). Para ativar as fotos, salve os arquivos abaixo (sugestão: baixar as fotos publicadas no perfil do Google Maps da loja):
+A página tem slots para as 5 fotos reais da loja. Enquanto os arquivos não existirem, cada slot mostra uma ilustração SVG estilo xilogravura (fallback automático). Salve na pasta `img/` com estes nomes (instruções também em `img/LEIA-ME.md`):
 
-| Arquivo | Conteúdo sugerido | Proporção |
+| Arquivo | Foto | Onde aparece |
 |---|---|---|
-| `img/queijo.jpg` | queijos minas na bancada | 4:3 |
-| `img/doce.jpg` | doce de leite / tacho | 4:3 |
-| `img/cachaca.jpg` | garrafas de cachaça | 4:3 |
-| `img/temperos.jpg` | temperos e molhos | 4:3 |
-| `img/loja.jpg` | interior ou fachada da loja | 4:5 (retrato) |
+| `img/queijo.jpg` | queijos na prateleira (retrato) | seção "A venda" (grande) |
+| `img/doce.jpg` | doce de leite nas formas | prateleira |
+| `img/cachaca.jpg` | garrafas de cachaça | prateleira |
+| `img/temperos.jpg` | colheres com temperos | prateleira |
+| `img/castanhas.jpg` | castanhas nas cestinhas | prateleira |
 
 ## Seções
 
