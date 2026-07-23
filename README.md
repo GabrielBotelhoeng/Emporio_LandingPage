@@ -1,40 +1,51 @@
-# 🌾 Empório Caipira Delícias do Brasil — Landing Page
+# Empório Caipira Delícias do Brasil — Landing Page
 
-Landing page oficial do **Empório Caipira Delícias do Brasil**, loja de produtos naturais e da roça em Catalão-GO.
+Landing page do **Empório Caipira Delícias do Brasil**, loja de produtos naturais em Catalão-GO, desde 2018. Nota 4,9 no Google com 261 avaliações.
 
-⭐ Nota **4,9** no Google Maps com mais de **261 avaliações**.
+Página única (`index.html`), autocontida — HTML, CSS e JS no mesmo arquivo, sem build. Basta abrir no navegador ou hospedar em qualquer serviço estático (GitHub Pages, Netlify, Vercel).
 
-## Sobre a página
+## Direção de arte
 
-Página única (`index.html`), 100% autocontida — HTML, CSS e JavaScript no mesmo arquivo, sem dependências de build. Basta abrir no navegador ou hospedar em qualquer serviço estático (GitHub Pages, Netlify, Vercel).
+Referência: mercearia de interior, rótulo de cachaça artesanal, armazém antigo.
 
-### Seções
+**Paleta** (derivada dos produtos):
 
-- **Hero** — chamada principal com nota do Google e botões de ação (WhatsApp)
-- **Faixa animada** — destaque dos principais produtos
-- **Números** — estatísticas com contadores animados
-- **Sobre** — história e cultura caipira do empório (desde 2018)
-- **Produtos** — queijos, cachaças, doces, frango caipira, temperos, grãos, polpas e tapioca
-- **Diferenciais** — procedência, atendimento, preço justo, entrega e acolhimento
-- **Depoimentos** — avaliações reais de clientes no Google Maps
-- **Visite-nos** — endereço, horários, telefone e mapa interativo do Google Maps
-- **CTA final + WhatsApp flutuante** — conversão direta para pedidos
+| Cor | Hex | Origem |
+|---|---|---|
+| Queijo | `#E8A13C` | casca de queijo curado |
+| Rapadura | `#3E2A16` | rapadura escura |
+| Bananeira | `#2C4A2E` | folha de bananeira |
+| Coalhada | `#F2E8CF` | coalhada / nata |
+| Telha | `#A0432A` | telha e barro goiano |
 
-### Recursos técnicos
+**Tipografia:** [Ultra](https://fonts.google.com/specimen/Ultra) (display fat-face, cara de letreiro) + [Alegreya Sans](https://fonts.google.com/specimen/Alegreya+Sans) (corpo humanista).
 
-- Design responsivo (mobile-first, menu hambúrguer)
-- Animações de entrada com `IntersectionObserver` (respeitando `prefers-reduced-motion`)
-- SEO: meta tags, Open Graph e dados estruturados `schema.org` (LocalBusiness/GroceryStore)
-- Fontes: Fraunces + Nunito Sans (Google Fonts)
+**Elemento assinatura:** carimbo circular SVG "Catalão-GO · desde 2018", no hero e no rodapé.
 
-## Como publicar no GitHub Pages
+## FOTOS — ação necessária
 
-1. No repositório, acesse **Settings → Pages**
-2. Em *Source*, escolha a branch desejada e a pasta `/ (root)`
-3. Salve — a página ficará disponível em `https://<usuario>.github.io/Emporio_LandingPage/`
+A página tem slots para fotos reais. Enquanto os arquivos não existirem, cada slot mostra uma ilustração SVG estilo xilogravura (fallback automático). Para ativar as fotos, salve os arquivos abaixo (sugestão: baixar as fotos publicadas no perfil do Google Maps da loja):
+
+| Arquivo | Conteúdo sugerido | Proporção |
+|---|---|---|
+| `img/queijo.jpg` | queijos minas na bancada | 4:3 |
+| `img/doce.jpg` | doce de leite / tacho | 4:3 |
+| `img/cachaca.jpg` | garrafas de cachaça | 4:3 |
+| `img/temperos.jpg` | temperos e molhos | 4:3 |
+| `img/loja.jpg` | interior ou fachada da loja | 4:5 (retrato) |
+
+## Seções
+
+Barra de endereço · nav · hero tipográfico com carimbo · prateleira de fotos com etiquetas · faixa de modalidades · editorial "A venda" · quadro de produtos (lista numerada estilo armazém) · citação em destaque · depoimentos reais do Google · onde fica + mapa · rodapé.
+
+## Publicar no GitHub Pages
+
+1. **Settings → Pages**
+2. Em *Source*, escolha a branch e a pasta `/ (root)`
+3. A página fica em `https://<usuario>.github.io/Emporio_LandingPage/`
 
 ## Contato do empório
 
-- 📍 Av. Dr. Lamartine Pinto de Avelar, 1003 — Lot. Vila Chaud, Catalão-GO
-- 📞 WhatsApp: [(64) 99986-4933](https://wa.me/5564999864933)
-- 📷 [Instagram](https://www.instagram.com/emporiocaipiradeliciasdobrasil/) · [Facebook](https://www.facebook.com/emporio.caipiradeliciasdobrasil/)
+- Av. Dr. Lamartine Pinto de Avelar, 1003 — Lot. Vila Chaud, Catalão-GO
+- WhatsApp: [(64) 99986-4933](https://wa.me/5564999864933)
+- [Instagram](https://www.instagram.com/emporiocaipiradeliciasdobrasil/) · [Facebook](https://www.facebook.com/emporio.caipiradeliciasdobrasil/)
