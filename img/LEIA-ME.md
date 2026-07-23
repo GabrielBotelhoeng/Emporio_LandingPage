@@ -1,13 +1,13 @@
 # Fotos da página
 
-Salve as 5 fotos nesta pasta com **exatamente estes nomes** (a página as encontra sozinha; enquanto não existirem, aparecem as ilustrações):
+As 5 fotos já estão no lugar, otimizadas em JPG:
 
 | Arquivo | Foto | Onde aparece |
 |---|---|---|
-| `queijo.jpg` | queijos na prateleira (retrato) | seção "A venda" (grande) |
+| `queijo.jpg` | queijos na prateleira | seção "A venda" (grande) |
 | `doce.jpg` | doce de leite nas formas | prateleira |
 | `cachaca.jpg` | garrafas de cachaça Cambéba | prateleira |
-| `temperos.jpg` | colheres com temperos | prateleira |
+| `temperos.jpg` | colheres com temperos (recortada da arte de divulgação) | prateleira |
 | `castanhas.jpg` | castanhas nas cestinhas | prateleira |
 
-Como subir pelo site do GitHub: abra a pasta `img/` no repositório → **Add file → Upload files** → arraste as fotos → **Commit changes**.
+Para trocar alguma foto no futuro, basta substituir o arquivo mantendo o mesmo nome. Se a página não encontrar um arquivo, ela mostra automaticamente a ilustração correspondente.
