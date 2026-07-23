@@ -9,6 +9,6 @@ As 5 fotos já estão no lugar, otimizadas em JPG:
 | `cachaca.jpg` | garrafas de cachaça Cambéba | prateleira |
 | `temperos.jpg` | colheres com temperos (recortada da arte de divulgação) | prateleira |
 | `castanhas.jpg` | castanhas nas cestinhas | prateleira |
-| `logo.png` | logo oficial da loja (quadrada) | navegação, rodapé e preview de compartilhamento |
+| `logo.jpg` | logo oficial da loja (quadrada) | navegação, rodapé e preview de compartilhamento |
 
 Para trocar alguma foto no futuro, basta substituir o arquivo mantendo o mesmo nome. Se a página não encontrar um arquivo, ela mostra automaticamente a ilustração correspondente.
