@@ -9,6 +9,7 @@
   <meta property="og:description" content="Queijo no ponto, doce feito no tacho e cachaça de alambique. Desde 2018 na Lamartine, 1003. Nota 4,9 no Google.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="https://gabrielbotelhoeng.github.io/Emporio_LandingPage/img/logo.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='none' stroke='%23A0432A' stroke-width='5'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='bold' font-size='26' fill='%23A0432A'%3EEC%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,11 +105,20 @@
       gap: 18px; padding: 14px 0; flex-wrap: wrap;
     }
     .marca {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-family: var(--display);
       font-size: 1.15rem;
       color: var(--rapadura);
       text-decoration: none;
       line-height: 1;
+    }
+    .marca-logo {
+      width: 48px; height: 48px;
+      object-fit: cover;
+      border: 2px solid var(--rapadura);
+      flex-shrink: 0;
     }
     .marca small {
       display: block;
@@ -460,6 +470,13 @@
     }
     @media (max-width: 860px) { .rodape .miolo { grid-template-columns: 1fr; text-align: center; justify-items: center; } }
     .rodape .carimbo { transform: rotate(7deg); width: 130px; }
+    .rodape-logo {
+      width: 92px; height: 92px;
+      object-fit: cover;
+      border: 2px solid var(--coalhada);
+      margin-bottom: 14px;
+    }
+    @media (max-width: 860px) { .rodape-logo { margin-inline: auto; } }
     .rodape-info p { margin-bottom: 6px; font-size: .98rem; }
     .rodape-info .nome-loja { font-family: var(--display); font-size: 1.25rem; text-transform: uppercase; margin-bottom: 10px; }
     .rodape-info a { color: var(--queijo); }
@@ -480,7 +497,10 @@
   <!-- navegação -->
   <nav class="nav" aria-label="Navegação principal">
     <div class="miolo">
-      <a class="marca" href="#topo">Empório Caipira<small>delícias do brasil</small></a>
+      <a class="marca" href="#topo">
+        <img class="marca-logo" src="img/logo.png" alt="" onerror="this.style.display='none'">
+        <span>Empório Caipira<small>delícias do brasil</small></span>
+      </a>
       <ul>
         <li class="some"><a href="#venda">A venda</a></li>
         <li class="some"><a href="#produtos">Produtos</a></li>
@@ -799,6 +819,7 @@
       </svg>
 
       <div class="rodape-info">
+        <img class="rodape-logo" src="img/logo.png" alt="Logo do Empório Caipira Delícias do Brasil" loading="lazy" onerror="this.style.display='none'">
         <p class="nome-loja">Empório Caipira Delícias do Brasil</p>
         <p>Av. Dr. Lamartine Pinto de Avelar, 1003 — Lot. Vila Chaud, Catalão-GO</p>
         <p>WhatsApp <a href="tel:+5564999864933">(64) 99986-4933</a> · delivery <a href="tel:+556434111999">(64) 3411-1999</a> · aberto até 18h30</p>
