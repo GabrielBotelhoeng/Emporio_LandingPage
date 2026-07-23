@@ -143,9 +143,10 @@
       transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
     }
     .botao-zap:hover {
-      background: var(--rapadura);
-      transform: translate(1px, 1px);
-      box-shadow: 2px 2px 0 var(--rapadura);
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 var(--rapadura);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     /* ---------- hero tipográfico ---------- */
@@ -321,6 +322,55 @@
     }
     .quadro-nota a { color: var(--queijo); font-weight: 700; }
 
+    /* ---------- como pedir ---------- */
+    .pedir { padding: 76px 0; }
+    .pedir-cabeca { margin-bottom: 40px; max-width: 60ch; }
+    .pedir-cabeca h2 {
+      font-family: var(--display); font-weight: 400;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      line-height: 1.12; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .passos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; }
+    @media (max-width: 760px) { .passos { grid-template-columns: 1fr; gap: 28px; } }
+    .passo .algarismo {
+      font-family: var(--display);
+      font-size: 2.6rem;
+      color: var(--telha);
+      line-height: 1;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .passo h3 {
+      font-weight: 800; text-transform: uppercase; letter-spacing: .08em;
+      font-size: .95rem; margin-bottom: 6px;
+    }
+    .passo p { font-size: .98rem; }
+    .passo a { font-weight: 700; }
+
+    /* ---------- perguntas de balcão ---------- */
+    .balcao { padding: 76px 0; background: var(--coalhada); border-top: 2px solid var(--rapadura); }
+    .balcao .miolo { max-width: 780px; }
+    .balcao h2 {
+      font-family: var(--display); font-weight: 400;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      line-height: 1.12; text-transform: uppercase; margin-bottom: 34px;
+    }
+    .balcao dl { border-top: 1px solid var(--rapadura); }
+    .balcao dt {
+      font-family: var(--corpo);
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding-top: 24px;
+    }
+    .balcao dt::before { content: "— "; color: var(--telha); }
+    .balcao dd {
+      padding: 6px 0 24px 1.4rem;
+      border-bottom: 1px solid var(--rapadura);
+      font-style: italic;
+      color: var(--bananeira);
+    }
+    .balcao dd a { font-weight: 700; font-style: normal; }
+
     /* ---------- citação em destaque ---------- */
     .citacao {
       background: var(--telha);
@@ -431,6 +481,7 @@
       <ul>
         <li class="some"><a href="#venda">A venda</a></li>
         <li class="some"><a href="#produtos">Produtos</a></li>
+        <li class="some"><a href="#pedir">Como pedir</a></li>
         <li class="some"><a href="#fregueses">Fregueses</a></li>
         <li class="some"><a href="#visite">Onde fica</a></li>
         <li><a class="botao-zap" href="https://wa.me/5564999864933?text=Oi!%20Vi%20o%20site%20do%20Emp%C3%B3rio%20Caipira%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir no WhatsApp</a></li>
@@ -568,6 +619,7 @@
         <h2>Uma venda de beira de estrada, no meio da cidade</h2>
         <p>O Empório Caipira abriu em 2018 com uma teimosia: a de que o povo de Catalão merecia comprar queijo de verdade sem precisar viajar. Queijo minas no ponto — frescal, meia-cura, curado —, doce feito no tacho, cachaça de alambique conhecido, tempero moído do jeito que a avó fazia.</p>
         <p>O frango caipira daqui é criado solto e é gigante — a Julia, que veio de São Paulo, pode confirmar. A linguiça de porco caipira sai junto, e a tapioca já tem freguesia fiel.</p>
+        <p>Tem também polpa de fruta pra suco de verdade, grão e castanha a granel, molho e compota da roça. E atrás do balcão, uma equipe que os fregueses fazem questão de elogiar nas avaliações: gentil, prestativa e sem pressa de te atender.</p>
         <p>Pode vir comprar na loja, pedir pra retirar na porta ou receber em casa. E se o dia apertar, ainda dá tempo: a casa abre todo dia e só fecha às 18h30.</p>
       </div>
     </div>
@@ -583,14 +635,42 @@
       <ul class="quadro-lista revela">
         <li><span class="num">Nº 01</span><span class="nome">Queijos minas</span><br><span class="desc">frescal, meia-cura e curado no ponto</span></li>
         <li><span class="num">Nº 02</span><span class="nome">Cachaças de alambique</span><br><span class="desc">artesanais, de procedência conhecida</span></li>
-        <li><span class="num">Nº 03</span><span class="nome">Doces caseiros</span><br><span class="desc">doce de leite, compotas e rapadura</span></li>
-        <li><span class="num">Nº 04</span><span class="nome">Carnes da roça</span><br><span class="desc">frango caipira de verdade e linguiça de porco caipira</span></li>
+        <li><span class="num">Nº 03</span><span class="nome">Doces caseiros</span><br><span class="desc">doce de leite de tacho, compotas e rapadura</span></li>
+        <li><span class="num">Nº 04</span><span class="nome">Carnes da roça</span><br><span class="desc">frango caipira criado solto — gigante — e linguiça de porco caipira</span></li>
         <li><span class="num">Nº 05</span><span class="nome">Temperos e molhos</span><br><span class="desc">feitos como antigamente</span></li>
         <li><span class="num">Nº 06</span><span class="nome">Tapioca e farinhas</span><br><span class="desc">a tapioca tem freguesia fiel</span></li>
         <li><span class="num">Nº 07</span><span class="nome">Polpas de frutas</span><br><span class="desc">pra suco de fruta de verdade</span></li>
-        <li><span class="num">Nº 08</span><span class="nome">Grãos, cereais e castanhas</span><br><span class="desc">a granel, sempre frescos</span></li>
+        <li><span class="num">Nº 08</span><span class="nome">Grãos, cereais e castanhas</span><br><span class="desc">a granel — leve quanto quiser</span></li>
       </ul>
       <p class="quadro-nota">Não achou o que procura? <a href="https://wa.me/5564999864933?text=Oi!%20Voc%C3%AAs%20t%C3%AAm...%3F" target="_blank" rel="noopener">Pergunta no WhatsApp</a> que a gente dá um jeito.</p>
+    </div>
+  </section>
+
+  <!-- como pedir -->
+  <section class="pedir" id="pedir">
+    <div class="miolo">
+      <div class="pedir-cabeca revela">
+        <p class="rotulo">Sem mistério</p>
+        <h2>Como pedir sem sair de casa</h2>
+        <p>Quem prefere vir provar no balcão é sempre bem-vindo. Mas se o dia estiver corrido, o caminho é curto:</p>
+      </div>
+      <div class="passos revela">
+        <div class="passo">
+          <span class="algarismo">1.</span>
+          <h3>Chama no WhatsApp</h3>
+          <p>Manda mensagem no <a href="https://wa.me/5564999864933" target="_blank" rel="noopener">(64) 99986-4933</a> dizendo o que precisa — ou pede a lista do que tem hoje.</p>
+        </div>
+        <div class="passo">
+          <span class="algarismo">2.</span>
+          <h3>A gente separa</h3>
+          <p>A equipe monta a sua sacola e te avisa quando estiver pronta, com o valor certinho.</p>
+        </div>
+        <div class="passo">
+          <span class="algarismo">3.</span>
+          <h3>Retira ou recebe</h3>
+          <p>Passa na porta e pega sem descer do carro, ou recebe em casa pela entrega em Catalão.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -625,6 +705,27 @@
         <blockquote>Sempre sou muito bem atendida. Todas as funcionárias são gentis e prestativas. Sou cliente fiel da tapioca rsrs e os demais produtos são impecáveis!!</blockquote>
         <footer>Mariana Pimenta <span>— freguesa da tapioca</span></footer>
       </article>
+    </div>
+  </section>
+
+  <!-- perguntas de balcão -->
+  <section class="balcao" id="balcao">
+    <div class="miolo revela">
+      <p class="rotulo">Perguntas de balcão</p>
+      <h2>O que sempre perguntam pra gente</h2>
+      <dl>
+        <dt>Vocês entregam?</dt>
+        <dd>Entregamos em Catalão, sim. E quem preferir pode retirar na porta da loja, sem nem descer do carro.</dd>
+
+        <dt>Que dia a loja fica mais cheia?</dt>
+        <dd>Quinta-feira é o dia de maior movimento. Se você gosta de comprar com sossego e prosear no balcão, os outros dias da semana são mais tranquilos.</dd>
+
+        <dt>Tem queijo curado hoje? E frango caipira?</dt>
+        <dd>Produto de roça gira rápido — o que chega fresco costuma sair no mesmo dia. Antes de vir, <a href="https://wa.me/5564999864933?text=Oi!%20Voc%C3%AAs%20t%C3%AAm...%3F" target="_blank" rel="noopener">chama no WhatsApp</a> que a gente confere na hora e já separa o seu.</dd>
+
+        <dt>Abre domingo e feriado?</dt>
+        <dd>Nos dias de semana a casa abre todo dia até as 18h30. Domingo e feriado, confirma pelo WhatsApp antes de vir — às vezes o horário muda.</dd>
+      </dl>
     </div>
   </section>
 
