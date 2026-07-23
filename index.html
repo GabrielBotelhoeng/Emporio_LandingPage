@@ -65,6 +65,8 @@
       line-height: 1.6;
       color: var(--rapadura);
       background: var(--coalhada);
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
     img { max-width: 100%; display: block; }
     a { color: var(--telha); }
@@ -130,13 +132,20 @@
       letter-spacing: .06em;
     }
     .nav ul { display: flex; align-items: center; gap: 22px; list-style: none; }
-    .nav ul a {
+    .nav ul a:not(.botao-zap) {
       font-weight: 700; font-size: .88rem; text-decoration: none;
       color: var(--rapadura); text-transform: uppercase; letter-spacing: .09em;
       border-bottom: 2px solid transparent; padding-bottom: 2px;
     }
-    .nav ul a:hover { border-bottom-color: var(--telha); }
-    @media (max-width: 720px) { .nav ul li.some { display: none; } }
+    .nav ul a:not(.botao-zap):hover { border-bottom-color: var(--telha); }
+    @media (max-width: 720px) {
+      .nav .miolo { flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 0 14px; }
+      .marca { justify-content: center; }
+      .nav ul { justify-content: center; flex-wrap: wrap; gap: 8px 18px; }
+      .nav ul a:not(.botao-zap) { font-size: .8rem; padding: 6px 0; }
+      .nav ul li:last-child { width: 100%; margin-top: 2px; }
+      .nav .botao-zap { display: block; text-align: center; }
+    }
 
     .botao-zap {
       display: inline-block;
@@ -206,7 +215,8 @@
       right: 0; top: 8px;
     }
     @media (max-width: 860px) {
-      .hero .carimbo { position: static; margin-bottom: 22px; }
+      .hero { padding: 44px 0 48px; }
+      .hero .carimbo { position: static; width: 112px; margin: 0 0 20px auto; display: block; }
     }
 
     /* ---------- prateleira de fotos ---------- */
@@ -220,7 +230,6 @@
     }
     @media (max-width: 860px) {
       .prateleira-grade { grid-template-columns: repeat(2, 1fr); }
-      .prateleira-grade .foto:last-child { grid-column: span 2; }
     }
 
     .foto { position: relative; margin: 0; }
@@ -490,6 +499,33 @@
       margin-top: 44px; padding-top: 20px;
       border-top: 1px solid rgba(242, 232, 207, .3);
       text-align: center; font-size: .85rem; color: rgba(242, 232, 207, .75);
+    }
+
+    /* ---------- refinamentos para celular ---------- */
+    @media (max-width: 480px) {
+      body { font-size: 1rem; }
+      .barra { font-size: .76rem; padding: 6px 10px; }
+      .hero h1 { font-size: clamp(2.4rem, 14.5vw, 3.2rem); letter-spacing: 0; }
+      .hero-cidade { letter-spacing: .2em; font-size: .76rem; }
+      .hero-sub { font-size: 1.12rem; }
+      .hero-prosa { font-size: 1rem; }
+      .hero-rodape { gap: 14px; }
+      .hero .botao-zap, .visite .botao-zap { display: block; text-align: center; }
+      .venda, .quadro, .fregueses, .visite, .pedir, .balcao { padding: 56px 0; }
+      .citacao { padding: 60px 0; }
+      .prateleira { padding-bottom: 48px; }
+      .prateleira-grade { gap: 12px; }
+      .etiqueta { font-size: .7rem; padding: 3px 9px; letter-spacing: .06em; }
+      .quadro-lista { column-gap: 0; }
+      .quadro-lista .nome { font-size: .95rem; }
+      .depo blockquote { font-size: 1.08rem; }
+      .fregueses-links { display: flex; flex-direction: column; gap: 10px; }
+      .fregueses-links .separa { display: none; }
+      .visite-mapa iframe { height: 320px; min-height: 0; }
+      .visite-mapa { box-shadow: 4px 4px 0 var(--rapadura); }
+      .rodape { padding: 44px 0 24px; }
+      .rodape .miolo { gap: 26px; }
+      .rodape-baixo { margin-top: 30px; }
     }
   </style>
 </head>
