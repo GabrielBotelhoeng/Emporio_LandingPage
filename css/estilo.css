@@ -99,11 +99,22 @@ a:focus-visible, button:focus-visible {
 }
 .nav ul a:not(.botao-zap):hover { border-bottom-color: var(--telha); }
 @media (max-width: 720px) {
-  .nav .miolo { flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 0 14px; }
+  .nav .miolo { flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 0 16px; }
   .marca { justify-content: center; }
-  .nav ul { justify-content: center; flex-wrap: wrap; gap: 8px 18px; }
-  .nav ul a:not(.botao-zap) { font-size: .8rem; padding: 6px 0; }
-  .nav ul li:last-child { width: 100%; margin-top: 2px; }
+  .nav ul { justify-content: center; flex-wrap: wrap; gap: 10px; }
+  .nav ul a:not(.botao-zap) {
+    display: inline-block;
+    font-size: .76rem;
+    padding: 8px 13px;
+    border: 2px solid var(--rapadura);
+    box-shadow: 2px 2px 0 var(--rapadura);
+    background: transparent;
+  }
+  .nav ul a:not(.botao-zap):active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+  .nav ul li:last-child { width: 100%; margin-top: 6px; }
   .nav .botao-zap { display: block; text-align: center; }
 }
 
