@@ -2,7 +2,16 @@
 
 Landing page do **Empório Caipira Delícias do Brasil**, loja de produtos naturais em Catalão-GO, desde 2018. Nota 4,9 no Google com 261 avaliações.
 
-Página única (`index.html`), autocontida — HTML, CSS e JS no mesmo arquivo, sem build. Basta abrir no navegador ou hospedar em qualquer serviço estático (GitHub Pages, Netlify, Vercel).
+Página estática, sem build — basta abrir no navegador ou hospedar em qualquer serviço estático (GitHub Pages, Netlify, Vercel).
+
+## Estrutura
+
+```
+index.html        — marcação da página
+css/estilo.css    — todos os estilos (paleta, seções, responsivo)
+js/script.js      — animação de revelação e carrossel da prateleira
+img/              — fotos, logo e instruções (LEIA-ME.md)
+```
 
 ## Direção de arte
 
