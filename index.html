@@ -221,18 +221,45 @@
       .hero .carimbo { position: static; width: 112px; margin: 0 auto 20px; display: block; }
     }
 
-    /* ---------- prateleira de fotos ---------- */
+    /* ---------- prateleira de fotos (carrossel) ---------- */
     .prateleira { background: var(--coalhada); padding: 8px 0 64px; }
-    .prateleira-grade {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
+    .prateleira-cabeca {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
       border-top: 2px solid var(--rapadura);
-      padding-top: 14px;
+      padding-top: 14px; margin-bottom: 16px;
     }
-    @media (max-width: 860px) {
-      .prateleira-grade { grid-template-columns: repeat(2, 1fr); }
+    .prateleira-cabeca .rotulo { margin-bottom: 0; }
+    .setas { display: flex; gap: 10px; }
+    .seta {
+      width: 44px; height: 44px;
+      background: transparent;
+      border: 2px solid var(--rapadura);
+      box-shadow: 3px 3px 0 var(--rapadura);
+      cursor: pointer;
+      display: grid; place-items: center;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
+    .seta svg { width: 18px; height: 18px; stroke: var(--rapadura); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .seta:hover:not(:disabled) { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--rapadura); }
+    .seta:disabled { opacity: .3; cursor: default; box-shadow: none; transform: translate(3px, 3px); }
+    .trilho {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 18px;
+      scrollbar-color: var(--rapadura) transparent;
+      scrollbar-width: thin;
+    }
+    .trilho::-webkit-scrollbar { height: 8px; }
+    .trilho::-webkit-scrollbar-track { background: transparent; }
+    .trilho::-webkit-scrollbar-thumb { background: var(--rapadura); }
+    .trilho .foto {
+      flex: 0 0 min(300px, 76vw);
+      scroll-snap-align: start;
+    }
+    @media (prefers-reduced-motion: reduce) { .trilho { scroll-behavior: auto; } }
 
     .foto { position: relative; margin: 0; }
     .foto img, .foto svg.ilustra {
@@ -585,11 +612,23 @@
     </div>
   </header>
 
-  <!-- prateleira de fotos -->
+  <!-- prateleira de fotos (carrossel) -->
   <section class="prateleira" aria-label="Fotos dos produtos">
     <div class="miolo">
-      <div class="prateleira-grade">
-        <!-- FOTOS: salve como img/doce.jpg, img/cachaca.jpg, img/temperos.jpg, img/castanhas.jpg (e img/queijo.jpg na seção seguinte) -->
+      <div class="prateleira-cabeca">
+        <p class="rotulo">Direto da prateleira</p>
+        <div class="setas">
+          <button class="seta" type="button" data-dir="-1" aria-label="Ver fotos anteriores">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <button class="seta" type="button" data-dir="1" aria-label="Ver mais fotos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="trilho" tabindex="0" aria-label="Fotos dos produtos — deslize para ver mais">
+        <!-- PARA ADICIONAR UM PRODUTO NOVO: copie um bloco <figure class="foto"> ... </figure>,
+             troque o src da foto (salve o arquivo em img/) e o texto da etiqueta. Pronto. -->
         <figure class="foto revela">
           <img src="img/doce.jpg" alt="Doce de leite feito no tacho" loading="lazy" onerror="this.parentElement.classList.add('sem-foto')">
           <svg class="ilustra" viewBox="0 0 400 300" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
@@ -898,6 +937,24 @@
       });
     }, { threshold: 0.15 });
     document.querySelectorAll('.revela').forEach((el) => observador.observe(el));
+
+    // carrossel da prateleira
+    const trilho = document.querySelector('.trilho');
+    const setas = document.querySelectorAll('.seta');
+    const atualizarSetas = () => {
+      const fim = trilho.scrollWidth - trilho.clientWidth;
+      setas[0].disabled = trilho.scrollLeft <= 4;
+      setas[1].disabled = trilho.scrollLeft >= fim - 4;
+    };
+    setas.forEach((seta) => {
+      seta.addEventListener('click', () => {
+        const largura = trilho.querySelector('.foto').getBoundingClientRect().width + 14;
+        trilho.scrollBy({ left: largura * Number(seta.dataset.dir), behavior: 'smooth' });
+      });
+    });
+    trilho.addEventListener('scroll', atualizarSetas, { passive: true });
+    window.addEventListener('resize', atualizarSetas);
+    atualizarSetas();
   </script>
 </body>
 </html>
