@@ -124,12 +124,14 @@
     }
     .marca small {
       display: block;
-      font-family: var(--corpo);
-      font-style: italic;
-      font-size: .78rem;
-      font-weight: 500;
+      font-family: var(--display);
+      font-style: normal;
+      font-size: .68rem;
+      font-weight: 400;
       color: var(--telha);
-      letter-spacing: .06em;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      margin-top: 3px;
     }
     .nav ul { display: flex; align-items: center; gap: 22px; list-style: none; }
     .nav ul a:not(.botao-zap) {
@@ -216,7 +218,7 @@
     }
     @media (max-width: 860px) {
       .hero { padding: 44px 0 48px; }
-      .hero .carimbo { position: static; width: 112px; margin: 0 0 20px auto; display: block; }
+      .hero .carimbo { position: static; width: 112px; margin: 0 auto 20px; display: block; }
     }
 
     /* ---------- prateleira de fotos ---------- */
